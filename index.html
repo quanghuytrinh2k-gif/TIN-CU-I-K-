@@ -3,37 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <title>Hà Nội Pro Max</title>
+
 <style>
 html { scroll-behavior: smooth; }
-body {font-family: Arial;margin: 0;background: #eef6fb;}
-header {background: linear-gradient(to right, #002244, #005599);color: white;padding: 25px;text-align: center;}
-nav { background: #004488;padding: 10px;text-align: center;position: sticky;top: 0;}
-nav a {color: white;margin: 12px;text-decoration: none;font-weight: bold;}
-nav a:hover {color: yellow;}
-section { padding: 40px;opacity: 0;transform: translateY(30px);transition: 0.6s;}
-section.show { opacity: 1;transform: translateY(0);}
-h2 { color: #003366; }
-slider { max-width: 650px;margin: 20px auto;position: relative;}
-slide { width: 100%; display: none;border-radius: 12px;}
-.prev, .next { position: absolute; top: 50%;transform: translateY(-50%);font-size: 25px;background: rgba(0,0,0,0.5); color: white; padding: 8px;cursor: pointer;}
-.prev { left: 0; }
-.next { right: 0; }
 
-.dots {
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #eef6fb;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(to right, #002244, #005599);
+    color: white;
+    padding: 25px;
     text-align: center;
 }
 
-.dot {
-    height: 10px;
-    width: 10px;
-    margin: 5px;
-    display: inline-block;
-    background: gray;
-    border-radius: 50%;
+/* MENU FIX */
+nav {
+    background: #004488;
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* FIX LỖI KHÔNG CLICK */
+}
+
+nav a {
+    color: white;
+    margin: 12px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover { color: yellow; }
+
+/* SECTION */
+section {
+    padding: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.6s;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 { color: #003366; }
+
+/* SLIDER */
+.slider {
+    max-width: 650px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    display: none;
+    border-radius: 12px;
+}
+
+/* NÚT */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 8px;
     cursor: pointer;
 }
 
-.active { background: black; }
+.prev { left: 0; }
+.next { right: 0; }
 
 /* NÚT LÊN ĐẦU */
 #topBtn {
@@ -48,7 +96,6 @@ slide { width: 100%; display: none;border-radius: 12px;}
     display: none;
 }
 
-/* FOOTER */
 footer {
     background: #002244;
     color: white;
@@ -61,7 +108,7 @@ footer {
 <body>
 
 <header>
-<h1>HÀ NỘI - PRO MAX</h1>
+<h1>HÀ NỘI - THỦ ĐÔ NGÀN NĂM VĂN HIẾN</h1>
 </header>
 
 <nav>
@@ -74,87 +121,91 @@ footer {
 
 <!-- HOME -->
 <section id="home">
-<h2>Giới thiệu</h2>
+<h2>Giới thiệu chung</h2>
 
-<div class="slider" id="s1">
+<div class="slider">
 <img class="slide s1" src="hanoi1.jpg">
 <img class="slide s1" src="hanoi2.jpg">
-
 <div class="prev" onclick="changeSlide(-1,'s1')">&#10094;</div>
 <div class="next" onclick="changeSlide(1,'s1')">&#10095;</div>
 </div>
 
-<p><b>Hà Nội</b> là thủ đô với lịch sử hơn <b>1000 năm</b>. Thành phố mang vẻ đẹp cổ kính và hiện đại. Đây là trung tâm quan trọng của đất nước. Hà Nội luôn phát triển mạnh mẽ.</p>
+<p><b>Hà Nội</b> là thủ đô của Việt Nam và là trung tâm <b>chính trị – văn hóa – kinh tế</b> lớn nhất của cả nước. Thành phố có lịch sử hơn <b>1000 năm</b>, gắn liền với nhiều giai đoạn phát triển quan trọng của dân tộc. Trải qua thời gian, Hà Nội vẫn giữ được nét cổ kính đặc trưng qua các công trình kiến trúc và di tích lịch sử. Đồng thời, nơi đây cũng đang phát triển mạnh mẽ để trở thành một đô thị hiện đại, năng động và hội nhập quốc tế.</p>
+
+<p>Không chỉ là trung tâm hành chính, Hà Nội còn là nơi lưu giữ nhiều giá trị văn hóa truyền thống quý báu. Những nét đẹp trong đời sống, phong tục và tập quán của người dân đã góp phần tạo nên bản sắc riêng biệt. Đây cũng là điểm đến hấp dẫn đối với du khách trong và ngoài nước. Chính vì vậy, Hà Nội luôn giữ vị trí quan trọng trong lòng mỗi người dân Việt Nam.</p>
 </section>
 
 <!-- POLITICS -->
 <section id="politics">
 <h2>Chính trị</h2>
 
-<div class="slider" id="s2">
+<div class="slider">
 <img class="slide s2" src="badinh1.jpg">
 <img class="slide s2" src="badinh2.jpg">
-
 <div class="prev" onclick="changeSlide(-1,'s2')">&#10094;</div>
 <div class="next" onclick="changeSlide(1,'s2')">&#10095;</div>
 </div>
 
-<p><b>Hà Nội</b> là trung tâm chính trị lớn nhất. Nơi đây đặt cơ quan nhà nước. Các quyết định quan trọng được đưa ra. Vai trò rất quan trọng.</p>
+<p><b>Hà Nội</b> là trung tâm chính trị quan trọng nhất của Việt Nam, nơi đặt trụ sở của các cơ quan lãnh đạo cao nhất như Quốc hội và Chính phủ. Mọi quyết định lớn ảnh hưởng đến sự phát triển của đất nước đều được đưa ra tại đây. Điều này cho thấy vai trò đặc biệt quan trọng của Hà Nội trong hệ thống quản lý quốc gia.</p>
+
+<p>Thành phố còn là nơi diễn ra nhiều hoạt động ngoại giao quan trọng với sự tham gia của các nguyên thủ quốc gia và tổ chức quốc tế. Những sự kiện này góp phần nâng cao vị thế của Việt Nam trên trường quốc tế. Nhờ đó, Hà Nội không chỉ là trung tâm trong nước mà còn có tầm ảnh hưởng quốc tế.</p>
 </section>
 
 <!-- DEST -->
 <section id="destinations">
-<h2>Địa điểm</h2>
+<h2>Địa điểm nổi bật</h2>
 
-<div class="slider" id="s3">
+<div class="slider">
 <img class="slide s3" src="vanmieu1.jpg">
 <img class="slide s3" src="vanmieu2.jpg">
-
 <div class="prev" onclick="changeSlide(-1,'s3')">&#10094;</div>
 <div class="next" onclick="changeSlide(1,'s3')">&#10095;</div>
 </div>
 
-<p><b>Hà Nội</b> có nhiều địa danh nổi tiếng. Mang giá trị lịch sử lâu đời. Thu hút du khách. Là điểm mạnh du lịch.</p>
+<p>Hà Nội sở hữu nhiều <b>địa danh nổi tiếng</b> mang giá trị lịch sử và văn hóa lâu đời. Các địa điểm như Văn Miếu, Lăng Bác và Hoàng thành Thăng Long là những biểu tượng tiêu biểu của thủ đô. Những công trình này không chỉ thu hút du khách mà còn góp phần giáo dục truyền thống cho thế hệ trẻ.</p>
+
+<p>Bên cạnh đó, các danh lam thắng cảnh như Hồ Gươm và Hồ Tây mang vẻ đẹp yên bình, thơ mộng. Đây là nơi lý tưởng để tham quan và thư giãn. Sự kết hợp giữa cổ kính và hiện đại đã tạo nên nét độc đáo riêng của Hà Nội.</p>
 </section>
 
 <!-- FOOD -->
 <section id="food">
 <h2>Ẩm thực</h2>
 
-<div class="slider" id="s4">
+<div class="slider">
 <img class="slide s4" src="pho1.jpg">
 <img class="slide s4" src="pho2.jpg">
-
 <div class="prev" onclick="changeSlide(-1,'s4')">&#10094;</div>
 <div class="next" onclick="changeSlide(1,'s4')">&#10095;</div>
 </div>
 
-<p><b>Ẩm thực Hà Nội</b> rất phong phú. Món ăn tinh tế. Đậm bản sắc. Rất hấp dẫn.</p>
+<p><b>Ẩm thực Hà Nội</b> nổi tiếng với sự tinh tế và phong phú. Các món ăn như phở, bún chả, bánh cuốn mang hương vị đặc trưng khó quên. Đây là một phần quan trọng trong văn hóa của thủ đô.</p>
+
+<p>Ẩm thực đường phố cũng rất đa dạng và hấp dẫn, thu hút nhiều du khách. Những món ăn này không chỉ ngon mà còn có giá cả hợp lý. Vì vậy, ẩm thực chính là một trong những yếu tố làm nên sức hút của Hà Nội.</p>
 </section>
 
 <!-- CULTURE -->
 <section id="culture">
 <h2>Văn hóa</h2>
 
-<div class="slider" id="s5">
+<div class="slider">
 <img class="slide s5" src="phoco1.jpg">
 <img class="slide s5" src="phoco2.jpg">
-
 <div class="prev" onclick="changeSlide(-1,'s5')">&#10094;</div>
 <div class="next" onclick="changeSlide(1,'s5')">&#10095;</div>
 </div>
 
-<p><b>Văn hóa Hà Nội</b> mang nét truyền thống. Con người thanh lịch. Nhịp sống sôi động. Rất đặc trưng.</p>
+<p>Văn hóa Hà Nội là sự kết hợp hài hòa giữa <b>truyền thống và hiện đại</b>. Những giá trị văn hóa được gìn giữ qua nhiều thế hệ và vẫn tiếp tục phát triển. Điều này tạo nên bản sắc riêng của thủ đô.</p>
+
+<p>Người Hà Nội nổi tiếng với sự thanh lịch và tinh tế trong giao tiếp. Nhịp sống nơi đây vừa nhộn nhịp vừa sôi động, đặc biệt vào ban đêm. Tất cả đã góp phần tạo nên một Hà Nội rất đặc trưng và đáng nhớ.</p>
 </section>
 
 <footer>
-<p>© 2026 - Pro Max</p>
+<p>© 2026 - Website Hà Nội</p>
 </footer>
 
 <button id="topBtn" onclick="topFunction()">↑</button>
 
 <script>
-// SLIDER
 let slideIndex = {};
 
 function showSlides(name) {
@@ -166,8 +217,6 @@ function showSlides(name) {
     }
 
     if (slideIndex[name] > slides.length) slideIndex[name] = 1;
-    if (slideIndex[name] < 1) slideIndex[name] = slides.length;
-
     slides[slideIndex[name]-1].style.display = "block";
 }
 
@@ -176,7 +225,6 @@ function changeSlide(n, name) {
     showSlides(name);
 }
 
-// AUTO
 setInterval(() => {
     ["s1","s2","s3","s4","s5"].forEach(id => {
         slideIndex[id] = (slideIndex[id] || 1) + 1;
@@ -184,10 +232,9 @@ setInterval(() => {
     });
 }, 3000);
 
-// INIT
 ["s1","s2","s3","s4","s5"].forEach(showSlides);
 
-// SCROLL EFFECT
+// scroll animation + nút top
 window.addEventListener("scroll", () => {
     document.querySelectorAll("section").forEach(sec => {
         if (sec.getBoundingClientRect().top < 500) {
@@ -206,4 +253,3 @@ function topFunction() {
 
 </body>
 </html>
-</script>
