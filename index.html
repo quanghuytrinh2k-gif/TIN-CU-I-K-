@@ -82,8 +82,13 @@ h2 {
 }
 
 .slide:hover {
-    filter: grayscale(0%);
-    transform: scale(1.03);
+   .slide {
+    width: 100%;
+    display: none;
+    border-radius: 12px;
+    transition: 0.5s;}
+
+.slide:hover {transform: scale(1.03);}
 }
 
 /* NÚT */
